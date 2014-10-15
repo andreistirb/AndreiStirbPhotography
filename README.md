@@ -1,4 +1,0 @@
-AndreiStirbPhotography
-======================
-
-My website
