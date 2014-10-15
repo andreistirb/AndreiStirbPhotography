@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* CSS Document */
+.container {
+	position: absolute;
+	top: 13%;
+	left: 35%;
+}
+#slider {
+	background:#000;
+	border: 5px  solid #eaeaea;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.7);
+	height:464px;
+	width:700px;
+	margin: 40px auto 0;
+	overflow: visible;
+	position:relative;
+}
+
+#mask {
+	overflow:hidden;
+	height:464px;
+}
+
+#slider ul{
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#slider li {
+	width: 700px;
+	height: 464px;
+	position: absolute;
+	top: -470px;
+	list-style:none;
+}
+
+#slider li.firstanimation { -webkit-animation: cycle 25s linear infinite;
+							animation:cycle 25s linear infinite;}
+#slider li.secondanimation {-webkit-animation: cycletwo 25s linear infinite;
+							animation: cycletwo 25s linear infinite;}
+#slider li.thirdanimation {-webkit-animation: cyclethree 25s linear infinite;
+							animation: cyclethree 25s linear infinite;}
+#slider li.fourthanimation {-webkit-animation: cyclefour 25s linear infinite;
+							animation: cyclefour 25s linear infinite;}
+#slider li.fifthanimation {-webkit-animation: cyclefive 25s linear infinite;
+							animation: cyclefive 25s linear infinite;}
+
+@-webkit-keyframes cycle {
+	0% { top: 0px; }
+	4% {top:0px; }
+	16% {top:0px; opacity:1; z-index:0; }
+	20% {top:470px; opacity:0; z-index:0; }
+	21% {top:-470px; opacity:0; z-index:-1; }
+	92% {top:-470px; opacity:0; z-index:0;}
+	96% {top:-470px; opacity:0;}
+	100% {top:0px; opacity:1;}
+}
+
+@-moz-keyframes cycle {
+	0% { top: 0px; }
+	4% {top:0px; }
+	16% {top:0px; opacity:1; z-index:0; }
+	20% {top:470px; opacity:0; z-index:0; }
+	21% {top:-470px; opacity:0; z-index:-1; }
+	92% {top:-470px; opacity:0; z-index:0;}
+	96% {top:-470px; opacity:0;}
+	100% {top:0px; opacity:1;}
+}
+
+@-webkit-keyframes cycletwo {
+	0% {top:-470px; opacity:0;}
+	16% {top:-470px; opacity:0; }
+	20% {top:0px; opacity:1;}
+	24% {top: 0px; opacity:1;}
+	36% {top:0px; opacity:1; z-index:0;}
+	40% {top:470px; opacity:0; z-index:0;}
+	41% {top:-470px; opacity:0; z-index:-1}
+	100% {top:-470px; opacity:1; z-index:-1;}
+}
+
+@-moz-keyframes cycletwo {
+	0% {top:-470px; opacity:0;}
+	16% {top:-470px; opacity:0; }
+	20% {top:0px; opacity:1;}
+	24% {top: 0px; opacity:1;}
+	36% {top:0px; opacity:1; z-index:0;}
+	40% {top:470px; opacity:0; z-index:0;}
+	41% {top:-470px; opacity:0; z-index:-1}
+	100% {top:-470px; opacity:1; z-index:-1;}
+}
+
+@-webkit-keyframes cyclethree {
+	0% {top:-470px; opacity:0;}
+	36% {top:-470px; opacity:0;}
+	40% {top:0px; opacity:1;}
+	44% {top:0px; opacity:1;}
+	56% {top:0px; opacity:1;}
+	60% {top: 470px; opacity:0; z-index:0;}
+	61% {top:-470px; opacity:0; z-index:-1;}
+	100% {top: -470px; opacity:1; z-index:-1;}
+}
+
+@-moz-keyframes cyclethree {
+	0% {top:-470px; opacity:0;}
+	36% {top:-470px; opacity:0;}
+	40% {top:0px; opacity:1;}
+	44% {top:0px; opacity:1;}
+	56% {top:0px; opacity:1;}
+	60% {top: 470px; opacity:0; z-index:0;}
+	61% {top:-470px; opacity:0; z-index:-1;}
+	100% {top: -470px; opacity:1; z-index:-1;}
+}
+
+@-webkit-keyframes cyclefour {
+	0%  { top: -470px; opacity: 0; }
+    56% { top: -470px; opacity: 0; }
+    60% { top: 0px; opacity: 1; }
+    64% { top: 0px; opacity: 1; }
+    76% { top: 0px; opacity: 1; z-index: 0; }
+    80% { top: 470px; opacity: 0; z-index: 0; }
+    81% { top: -470px; opacity: 0; z-index: -1; }
+    100%{ top: -470px; opacity: 0; z-index: -1; }
+}
+
+@-moz-keyframes cyclefour {
+	0%  { top: -470px; opacity: 0; }
+    56% { top: -470px; opacity: 0; }
+    60% { top: 0px; opacity: 1; }
+    64% { top: 0px; opacity: 1; }
+    76% { top: 0px; opacity: 1; z-index: 0; }
+    80% { top: 470px; opacity: 0; z-index: 0; }
+    81% { top: -470px; opacity: 0; z-index: -1; }
+    100%{ top: -470px; opacity: 0; z-index: -1; }
+}
+
+@-webkit-keyframes cyclefive {
+   0%  { top: -470px; opacity: 0; }
+   76% { top: -470px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+   100%{ top: 470px; opacity: 0; z-index: 0; }
+}
+
+@-moz-keyframes cyclefive {
+   0%  { top: -470px; opacity: 0; }
+   76% { top: -470px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+   100%{ top: 470px; opacity: 0; z-index: 0; }
+}
+
+.progress-bar {
+	position: relative;
+	top: -15px;
+	width: 700px;
+	height: 15px;
+	background:#000;
+	-webkit-animation: fullexpand 25s ease-out infinite;
+	animation: fullexpand 25s ease-out infinite;
+}
+
+@-webkit-keyframes fullexpand {
+	/* In these keyframes, the progress-bar is stationary */
+   0%, 20%, 40%, 60%, 80%, 100% { width: 0%; opacity: 0; }
+
+   /* In these keyframes, the progress-bar starts to come alive */
+   4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar moves forward for 3 seconds */
+   16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
+
+   /* In these keyframes, the progress-bar has finished his path */
+   17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar will disappear and then resume the cycle */
+   18%, 38%, 58%, 78%, 98% { width: 100%; opacity: 0; }
+}
+
+@-moz-keyframes fullexpand {
+	/* In these keyframes, the progress-bar is stationary */
+   0%, 20%, 40%, 60%, 80%, 100% { width: 0%; opacity: 0; }
+
+   /* In these keyframes, the progress-bar starts to come alive */
+   4%, 24%, 44%, 64%, 84% { width: 0%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar moves forward for 3 seconds */
+   16%, 36%, 56%, 76%, 96% { width: 100%; opacity: 0.7; }
+
+   /* In these keyframes, the progress-bar has finished his path */
+   17%, 37%, 57%, 77%, 97% { width: 100%; opacity: 0.3; }
+
+   /* In these keyframes, the progress-bar will disappear and then resume the cycle */
+   18%, 38%, 58%, 78%, 98% { width: 100%; opacity: 0; }
+}
+
+#slider .tooltip {
+   background: rgba(0,0,0,0.7);
+   width: 200px;
+   height: 60px;
+   position: relative;
+   bottom: 110px;
+   left: -205px;
+   -webkit-transition:all 0.3s ease-in-out;
+   -moz-transition:  all 0.3s ease-in-out;
+}
+#slider li#first:hover .tooltip, 
+#slider li#second:hover .tooltip, 
+#slider li#third:hover .tooltip, 
+#slider li#fourth:hover .tooltip, 
+#slider li#fifth:hover .tooltip {
+	left:0px;
+}
+
+#slider .tooltip h1 {
+   color: #fff;
+   font-size: 24px;
+   font-family:'Trebuchet MS',sans-serif;
+   font-weight: 300;
+   line-height: 60px;
+   padding: 0 0 0 10px;
+}
+
+#slider:hover li,
+#slider:hover .progress-bar {
+	-webkit-animation-play-state:paused;
+	animation-play-state:paused;}
