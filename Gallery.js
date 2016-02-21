@@ -17,55 +17,60 @@ $(document).ready(function(e) {
 	var caption_new_work = new Array("Autumn","Dead nature");
 	var caption;
 	var page = document.location.href.match(/[^\/]+$/)[0];
-	var cale_tb,cale,nr_imagini;
+	var cale_tb,cale,nr_imagini=0;
+        var fileExtension = ".jpg";
 	
 	//alege ce imagini sa incarce (in functie de galerie)
 	
 	switch(page){
 		case "Landscape.html":
-			cale_tb = "gallery/landscape/thumbnails/";
-			cale = "gallery/landscape/pictures/";
-			nr_imagini = 30;
+			cale_tb = "gallery/landscape/thumbnails";
+			cale = "gallery/landscape/pictures";
 			caption = caption_landscape;
 			break;
 		case "Nature.html":
-			cale_tb = "gallery/nature/thumbnails/";
-			cale = "gallery/nature/pictures/";
-			nr_imagini = 12;
+			cale_tb = "gallery/nature/thumbnails";
+			cale = "gallery/nature/pictures";
 			caption = caption_nature;
 			break;
 		case "Lego.html":
-			cale_tb = "gallery/lego/thumbnails/";
-			cale = "gallery/lego/pictures/";
-			nr_imagini = 14;
+			cale_tb = "gallery/lego/thumbnails";
+			cale = "gallery/lego/pictures";
 			caption = caption_lego;
 			break;
 		case "City.html":
-			cale_tb = "gallery/city/thumbnails/";
-			cale = "gallery/city/pictures/";
-			nr_imagini = 3;
+			cale_tb = "gallery/city/thumbnails";
+			cale = "gallery/city/pictures";
 			caption = caption_city;
 			break;
 		case "New_work.html":
-			cale_tb = "gallery/new_work/thumbnails/";
-			cale = "gallery/new_work/pictures/";
-			nr_imagini = 2;
+			cale_tb = "gallery/new_work/thumbnails";
+			cale = "gallery/new_work/pictures";
 			caption = caption_new_work;
 			break;
 	}
-	
+
+	$.ajax({
+          async:false,
+	  url: cale_tb,
+          success: function(data){
+            $(data).find("a:contains(" + fileExtension + ")").each(function(){
+              var filename = this.href.replace(window.location.host, "").replace("http://", "");
+              $(".mask").append('<div class = "thumbnail"> <img src="' + cale_tb + filename + '"/>' + '</div>');
+              nr_imagini = nr_imagini + 1;
+            });
+          } 
+        });
 	$(".mask").css("height",Math.round(nr_imagini/2)*75 + "px");
 	console.log($('.thumbnail').css("width"));
+        console.log(nr_imagini);
 	console.log(Math.round(nr_imagini/2) * 75);
-	for(var i=0; i<nr_imagini; i++){
-		$(".mask").append('<div class="thumbnail"><img src ="' + cale_tb + imagini[i] + '"/>' + '</div>');
-	}
 	
 	$('.thumbnail').mousedown(function(e) {
-		x = $("img",this).attr("src").match(/[^\/]+$/)[0];
-        console.log(parseInt($("img",this).attr("src").match(/[^\/]+$/)[0]));
-		$(".container_poza").replaceWith('<div class="container_poza"><img src =' + cale + x + ' /></div>');
-    });
+	  x = $("img",this).attr("src").match(/[^\/]+$/)[0];
+          console.log(parseInt($("img",this).attr("src").match(/[^\/]+$/)[0]));
+          $(".container_poza").replaceWith('<div class="container_poza"><img src =' + cale + '/' + x + ' /></div>');
+        });
 	
 	//parte de scroll
     
